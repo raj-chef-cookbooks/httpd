@@ -8,14 +8,14 @@ pipeline {
     }
     stage('Install Essential rpms') {
       steps {
-        scripts {
+        //scripts {
           def wgetExists = fileExists '/bin/wget'
           if (wgetExists) {
             echo 'Skipping wget installation'
           } else {
             echo 'sudo yum install -y wget'
           }
-        }
+        //}
       }
       /* def ChefdkExists = fileExists '/usr/bin/chef-client'
       if (chefdkExists) {
