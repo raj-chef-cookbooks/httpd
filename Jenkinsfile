@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'sudo yum update -y'
+        sh 'echo "sudo yum update -y" '
       }
     }
     /* stage('Install Essential rpms') {
@@ -11,7 +11,7 @@ pipeline {
       if (wgetExists) {
         echo 'Skipping wget installation'
       } else {
-        sudo yum install -y wget
+        echo 'sudo yum install -y wget'
       }
       def ChefdkExists = fileExists '/usr/bin/chef-client'
       if (chefdkExists) {
