@@ -17,7 +17,7 @@ pipeline {
         //  }
         //}
       }
-      / * def ChefdkExists = fileExists '/usr/bin/chef-client'
+      /* def ChefdkExists = fileExists '/usr/bin/chef-client'
       if (chefdkExists) {
         echo 'Skipping Chef Install...Already installed'
       } else {
