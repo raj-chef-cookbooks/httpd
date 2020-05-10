@@ -6,14 +6,16 @@ pipeline {
         sh 'echo "sudo yum update -y" '
       }
     }
-    /* stage('Install Essential rpms') {
-      def wgetExists = fileExists '/bin/wget'
-      if (wgetExists) {
-        echo 'Skipping wget installation'
-      } else {
-        echo 'sudo yum install -y wget'
+    stage('Install Essential rpms') {
+      steps {
+        def wgetExists = fileExists '/bin/wget'
+        if (wgetExists) {
+          echo 'Skipping wget installation'
+        } else {
+          echo 'sudo yum install -y wget'
+        }
       }
-      def ChefdkExists = fileExists '/usr/bin/chef-client'
+      /* def ChefdkExists = fileExists '/usr/bin/chef-client'
       if (chefdkExists) {
         echo 'Skipping Chef Install...Already installed'
       } else {
