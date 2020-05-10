@@ -8,9 +8,9 @@ pipeline {
     }
     stage('Install Essential rpms') {
       steps {
-        {
-         // def wgetExists = fileExists '/bin/wget'
-          if (fileExists('/bin/wget') {
+        scripts {
+          def wgetExists = fileExists '/bin/wget'
+          if (wgetExists) {
             echo 'Skipping wget installation'
           } else {
             sh "echo 'sudo yum install -y wget'"
