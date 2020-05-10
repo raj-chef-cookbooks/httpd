@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Install Essential rpms') {
       steps {
-        script {
+        scripts {
           def wgetExists = fileExists '/bin/wgets'
           if (wgetExists) {
             echo 'Skipping wget installation'
