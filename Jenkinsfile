@@ -9,7 +9,7 @@ pipeline {
     stage('Install Essential rpms') {
       steps {
         script {
-          def wgetExists = fileExists '/bin/wget'
+          def wgetExists = fileExists '/bin/wgets'
           if (wgetExists) {
             echo 'Skipping wget installation'
           } else {
