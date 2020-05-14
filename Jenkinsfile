@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Patch OS') {
       steps {
-        sh 'echo "this sudo yum update -y" '
+        sh 'echo  "sudo yum update -y" '
       }
     }
     stage('Install Essential rpms') {
